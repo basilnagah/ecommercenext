@@ -7,7 +7,7 @@ export default async function getMyToken() {
 
 
     const data = await cookies()
-    const encryptedToken = data.get('next-auth.session-token') || data.get('__secure-next-auth.session-token')
+    const encryptedToken = data.get('next-auth.session-token') || data.get('__Secure-next-auth.session-token')
 
 
     if(!encryptedToken){
