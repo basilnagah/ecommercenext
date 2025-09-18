@@ -36,11 +36,13 @@ export default function Checkout() {
 
             const data =await makeCashpayment(id , values)
             context?.handleCart()
-            router.push('allorders')
+            router.replace('/allorders')
+
+            
             
         }else{
 
-            const data = await makeOnlinePayment(id, 'http://localhost:3000', values)
+            const data = await makeOnlinePayment(id, 'https://ecommercenext-jade.vercel.app/', values)
                
             if (data.status == 'success') {
                 window.location.href = data.session.url
