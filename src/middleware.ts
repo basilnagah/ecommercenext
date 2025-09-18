@@ -7,9 +7,9 @@ export default async function middleware(request: NextRequest) {
     const { pathname } = request.nextUrl
 
 
-    if (!token && pathname == '/cart' || pathname == '/orders') {
-        return NextResponse.redirect( new URL('/login' , request.url) )
-    }
+    // if (!token && pathname == '/cart' || pathname == '/allorders') {
+    //     return NextResponse.redirect( new URL('/login' , request.url) )
+    // }
     
     
     if(token && pathname=='/login' || pathname=='/register'){
@@ -24,5 +24,5 @@ export default async function middleware(request: NextRequest) {
 
 
 export const config = {
-    matcher: ['/cart', '/orders' , '/login' , '/register']
+    matcher: ['/cart', '/allorders' , '/login' , '/register']
 }
